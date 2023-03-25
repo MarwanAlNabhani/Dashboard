@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="month.css">
+    <title>Month panel</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="topbar">
+            <div class="btn">
+                <button id="prevBtn">&laquo; Previous</button>
+                <button id="nextBtn">Next &raquo;</button>
+            </div>
+            <div id="date">
+                <span id="start-end-date" style="font-size: 18px;font-family:Arial, sans-serif ;"></span>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="#">
+                        <div style="margin: auto;">Month</div>
+                    </a>
+                </li>
+                <li onclick="ToWeekPage()">
+                    <a href="#">
+                        <div style="margin: auto;">Week</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-name">Region</div>
+                        <div class="number"><span id="region-count"></div>
+                        <div class="card-name"><span id="region-name"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-name">Status</div>
+                        <div class="number"><span id="Status-count"></div>
+                        <div class="card-name"><span id="Status-name"></div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-name">Issues</div>
+                        <div class="number"><span id="Issue-count"></div>
+                        <div class="card-name"><span id="Issue-name"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-name">Total tickets</div>
+                        <div class="number"><span id="total-count"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="charts">
+                <div class="chart pie-chart">
+                    <h2>Region</h2>
+                    <div>
+                        <canvas id="pie-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart doughnut-chart">
+                    <h2>Status</h2>
+                    <div>
+                        <canvas id="doughtnut-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart polarArea-chart">
+                    <h2>Issue Category</h2>
+                    <div>
+                        <canvas id="polarArea-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart bar-chart">
+                    <h2>Queue</h2>
+                    <div>
+                        <canvas id="bar-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script type="module" src="monthCharts.js"></script>
+    <script type="module" src="monthHighestData.js"></script>
+    <script type="module" src="monthDateCalculator.js"></script>
+
+</body>
+<script>
+    function ToWeekPage() {
+        window.location.href = "weekDashboard.html";
+    }
+    
+</script>
+
+</html>
